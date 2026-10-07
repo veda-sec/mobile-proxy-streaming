@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2563eb"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker>
+    <filter id="s" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1200" height="640" fill="#f8fafc"/>
+  <text x="600" y="46" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Proxy no dispositivo: do navegador ao servidor de origem</text>
+
+  <!-- legenda -->
+  <g font-size="15" fill="#334155">
+    <line x1="370" y1="78" x2="420" y2="78" stroke="#2563eb" stroke-width="5" marker-end="url(#b)"/><text x="432" y="83">pedido (envio)</text>
+    <line x1="590" y1="78" x2="640" y2="78" stroke="#dc2626" stroke-width="5" marker-end="url(#r)"/><text x="652" y="83">resposta (dados recebidos)</text>
+  </g>
+
+  <!-- SITE -->
+  <g filter="url(#s)">
+    <rect x="40" y="120" width="320" height="400" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  </g>
+  <text x="200" y="154" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Site (navegador)</text>
+  <text x="200" y="176" text-anchor="middle" font-size="13" fill="#64748b">PC · TV · notebook</text>
+  <rect x="70" y="200" width="260" height="110" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="200" y="232" text-anchor="middle" font-size="16" font-weight="600" fill="#3730a3">Service Worker</text>
+  <text x="200" y="254" text-anchor="middle" font-size="13" fill="#4f46e5">intercepta /api/stream</text>
+  <text x="200" y="274" text-anchor="middle" font-size="13" fill="#4f46e5">devolve a resposta como stream</text>
+  <rect x="70" y="350" width="260" height="140" rx="10" fill="#0f172a"/>
+  <polygon points="178,390 178,450 230,420" fill="#ef4444"/>
+  <text x="200" y="480" text-anchor="middle" font-size="14" font-weight="600" fill="#e2e8f0">Player de vídeo (HLS/TS)</text>
+  <line x1="170" y1="310" x2="170" y2="350" stroke="#2563eb" stroke-width="4" marker-end="url(#b)"/>
+  <line x1="230" y1="350" x2="230" y2="310" stroke="#dc2626" stroke-width="4" marker-end="url(#r)"/>
+
+  <!-- CELULAR -->
+  <g filter="url(#s)">
+    <rect x="465" y="260" width="270" height="260" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  </g>
+  <rect x="580" y="278" width="40" height="8" rx="4" fill="#cbd5e1"/>
+  <text x="600" y="322" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Celular (app)</text>
+  <text x="600" y="344" text-anchor="middle" font-size="13" fill="#64748b">Android · Capacitor</text>
+  <rect x="490" y="370" width="220" height="110" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="600" y="402" text-anchor="middle" font-size="16" font-weight="600" fill="#065f46">Proxy nativo</text>
+  <text x="600" y="424" text-anchor="middle" font-size="13" fill="#047857">requisição fora do navegador</text>
+  <text x="600" y="444" text-anchor="middle" font-size="13" fill="#047857">sem as travas de CORS</text>
+  <text x="600" y="464" text-anchor="middle" font-size="13" fill="#047857">envia em pedaços</text>
+
+  <!-- SERVIDOR -->
+  <g filter="url(#s)">
+    <rect x="840" y="120" width="320" height="400" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  </g>
+  <text x="1000" y="154" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Servidor de origem</text>
+  <text x="1000" y="176" text-anchor="middle" font-size="13" fill="#64748b">lista M3U · playlists · segmentos</text>
+  <g>
+    <rect x="900" y="210" width="200" height="70" rx="8" fill="#1e293b"/><circle cx="925" cy="245" r="6" fill="#22c55e"/><circle cx="947" cy="245" r="6" fill="#22c55e"/><rect x="990" y="239" width="90" height="12" rx="6" fill="#475569"/>
+    <rect x="900" y="296" width="200" height="70" rx="8" fill="#1e293b"/><circle cx="925" cy="331" r="6" fill="#22c55e"/><circle cx="947" cy="331" r="6" fill="#ef4444"/><rect x="990" y="325" width="90" height="12" rx="6" fill="#475569"/>
+    <rect x="900" y="382" width="200" height="70" rx="8" fill="#1e293b"/><circle cx="925" cy="417" r="6" fill="#22c55e"/><circle cx="947" cy="417" r="6" fill="#22c55e"/><rect x="990" y="411" width="90" height="12" rx="6" fill="#475569"/>
+  </g>
+  <text x="1000" y="488" text-anchor="middle" font-size="13" fill="#64748b">só enxerga o celular, não o site</text>
+
+  <!-- setas site <-> celular (WebRTC) -->
+  <line x1="365" y1="300" x2="460" y2="352" stroke="#2563eb" stroke-width="7" marker-end="url(#b)"/>
+  <line x1="460" y1="408" x2="365" y2="356" stroke="#dc2626" stroke-width="7" marker-end="url(#r)"/>
+  <text x="412" y="470" text-anchor="middle" font-size="14" font-weight="600" fill="#334155">WebRTC</text>
+  <text x="412" y="488" text-anchor="middle" font-size="12" fill="#64748b">DataChannel</text>
+  <text x="412" y="504" text-anchor="middle" font-size="12" fill="#64748b">(P2P / TURN)</text>
+
+  <!-- setas celular <-> servidor (HTTP) -->
+  <line x1="740" y1="352" x2="835" y2="304" stroke="#2563eb" stroke-width="7" marker-end="url(#b)"/>
+  <line x1="835" y1="352" x2="740" y2="404" stroke="#dc2626" stroke-width="7" marker-end="url(#r)"/>
+  <text x="788" y="470" text-anchor="middle" font-size="14" font-weight="600" fill="#334155">HTTP(S)</text>
+  <text x="788" y="488" text-anchor="middle" font-size="12" fill="#64748b">requisição nativa</text>
+
+  <!-- sinalização -->
+  <rect x="470" y="130" width="260" height="84" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="600" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#92400e">Servidor de sinalização</text>
+  <text x="600" y="182" text-anchor="middle" font-size="12" fill="#b45309">só ajuda site e celular a se encontrarem</text>
+  <text x="600" y="200" text-anchor="middle" font-size="12" fill="#b45309">(offer / answer / ICE) — não vê o conteúdo</text>
+  <line x1="360" y1="150" x2="470" y2="165" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 5"/>
+  <line x1="600" y1="214" x2="600" y2="258" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <text x="600" y="590" text-anchor="middle" font-size="15" fill="#475569">1 pedido do player → 2 celular busca na origem → 3 origem responde ao celular → 4 celular devolve ao site em pedaços → 5 player toca</text>
+  <text x="600" y="615" text-anchor="middle" font-size="13" fill="#94a3b8">O vídeo nunca passa por servidor intermediário: o proxy é o aparelho do próprio usuário.</text>
+</svg>
